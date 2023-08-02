@@ -1,0 +1,69 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Quicksand:wght@300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: "quicksand", sans-serif;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: gray;
+  }
+
+  p {
+    color: gray;
+  }
+
+  a {
+    color: gray;
+  }
+
+  input {
+    outline: 0;
+    color: gray;
+    padding: 0 10px;
+    background: none;
+  }
+
+  input::placeholder {
+    color: gray;
+  }
+
+  label {
+    color: gray;
+  }
+}
+
+@layer utilities {
+  .custom-container {
+    @apply w-full min-h-screen px-5 md:px-10 pt-20 pb-16 flex items-center flex-col bg-[#1d1d1d];
+  }
+
+  .loading,
+  .error {
+    @apply w-full h-screen flex items-center justify-center bg-primary-dark;
+  }
+
+  .link {
+    @apply relative tracking-[1px];
+  }
+
+  .link::after {
+    @apply absolute -bottom-[5px] left-0 h-[2px] w-[30%] rounded-full bg-primary-blueviolet transition-all duration-300 content-[""];
+  }
+
+  .active-link::after {
+    @apply absolute -bottom-[5px] left-0 h-[2px] w-full rounded-xl bg-primary-blueviolet transition-all duration-300 content-[""];
+  }
+
+  .link:hover::after {
+    @apply w-full;
+  }
+}
